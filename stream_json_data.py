@@ -32,7 +32,8 @@ def stream_to_azure(config_params):
 
         with client:
             client.send_batch(event_data_batch)
-        print(data)
+        if(int(config_params['print_data'] == 1)):
+            print(data)
         time.sleep(int(config_params['wait_in_secs']))
         i = i + 1
 
