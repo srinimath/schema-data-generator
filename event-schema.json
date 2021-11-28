@@ -1,0 +1,18 @@
+ {
+    "type": "object",
+    "properties": {
+        "orderId": {"type": "integer","miminum":1, "maximum":100000},
+        "storeId": {"type": "integer","minimum":1,"maximum":100},
+        "timeStamp" :{"type":"string","format":"date-time"},
+        "additionProperties": {
+            "type": "object", 
+            "properties": {
+                "custName":{"type":"string", "maxLength":20},
+                "latitude": {"type":"number"},
+                "longitude":{"type":"number"}
+            },
+            "required":["custName"]
+        }
+    },
+    "required": ["orderId","timeStamp"]
+    }
